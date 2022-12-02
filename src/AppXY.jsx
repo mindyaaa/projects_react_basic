@@ -2,21 +2,25 @@ import {React, useState} from 'react';
 import './AppXY.css';
 
 export default function AppXY() {
-  const [x, setX] = useState(0);
-  const [y, setY] = useState(0);
+  const [mouse, setMouse] = useState({
+    x : 0,
+    y : 0
+  });
 
   const mouseHandler = (e) =>{
-    // console.log('x', e.clientX);
-    // console.log('y', e.clientY);
-    setX(e.clientX);
-    setY(e.clientY);
+
+    // setMouse({x:e.clientX, y:e.clientY});
+
+    //수평으로만 이동 가능하게?
+    setMouse((prev) => ({...prev, x:e.clientX}))
+
 
   }
 
   return (
     <div onPointerMove={mouseHandler} className='container'>
       <div style={{
-        transform : `translate(${x}px, ${y}px)`
+        transform : `translate(${mouse.x}px, ${mouse.y}px)`
       }} className='pointer' />
     </div>
   );
