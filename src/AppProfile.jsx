@@ -7,6 +7,20 @@ function AppProfile() {
 
   return(
     <>
+    <button onClick={(e) => {
+      console.log(e);
+      alert('button clicked')
+    }}>버튼</button>
+    
+    <form action="">
+      <input type="text" />
+    </form>
+    
+    <Avatar
+     image="https://image-cdn.hypb.st/https%3A%2F%2Fkr.hypebeast.com%2Ffiles%2F2022%2F02%2Fjujutsu-kaisen-anime-season-2-to-air-in-2023-news-ft.jpg?w=960&cbr=1&q=90&fit=max"
+     isNew={true}
+      />
+
     <Profile
     image="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60"
     name="Summer"
@@ -26,10 +40,6 @@ function AppProfile() {
     isNew={false}
      />
 
-     <Avatar
-     image="https://image-cdn.hypb.st/https%3A%2F%2Fkr.hypebeast.com%2Ffiles%2F2022%2F02%2Fjujutsu-kaisen-anime-season-2-to-air-in-2023-news-ft.jpg?w=960&cbr=1&q=90&fit=max"
-     isNew={true}
-      />
     </>
   )
 }

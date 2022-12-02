@@ -1,3 +1,5 @@
+/* Profile */
+
 .orange {
   color: orange;
 }
@@ -37,4 +39,66 @@
   border-radius: 0.5rem;
   padding: 0.2rem 0.5rem;
   font-weight: bold;
+}
+
+
+/* Counter */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.total {
+  font-size: 1.2rem;
+}
+
+.banner {
+  display: flex;
+  background-color: yellow;
+  width: 400px;
+  height: 50px;
+  padding: 0 1rem;
+  margin-top: 3rem;
+  border-radius: 1rem;
+  font-weight: bold;
+  font-size: x-large;
+  align-items: center;
+  justify-content: center;
+}
+
+.counter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto;
+  width: 400px;
+  height: 300px;
+  border: 1rem solid orange;
+  border-radius: 1rem;
+}
+
+.counter:hover {
+  background-color: lightgoldenrodyellow;
+}
+
+.number {
+  font-size: 7rem;
+}
+
+.button {
+  background-color: antiquewhite;
+  border-style: none;
+  border-radius: 10px;
+  padding: 1rem;
+  width: 6rem;
+  height: 3.3rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.button:hover {
+  background-color: wheat;
 }
