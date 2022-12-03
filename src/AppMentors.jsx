@@ -1,16 +1,46 @@
-import React, { useState } from 'react';
+import React, { useReducer, useState } from 'react';
+import personReducer from './reducer/person-reducer';
 
 export default function AppMentor() {
-  const [person, setPerson] = useState(initialPerson);
+  // const [person, setPerson] = useState(initialPerson);
+  const [person, dispatch] = useReducer(personReducer, initialPerson);
+
+
+  const changeHandler = () => {
+    const prev = prompt(`누구의 이름을 바꾸고 싶은가요?`);
+    const current = prompt(`이름을 무엇으로 바꾸고 싶은가요?`);
+
+    dispatch({type : 'updated', prev, current});
+
+    //if문 이용
+    // setPerson((person) => ({
+    //   ...person, 
+    //   mentors : person.mentors.map((mentor) => {
+    //   if (mentor.name === prev) {
+    //     return {...mentor, name: current}
+    //   }
+    //   return mentor;
+    // }) })
+    // );
+
+    //삼항 연산자 이용
+    // const mentorsMap = person.mentors.map((mentor) =>
+    //   mentor.name === prev ? {...mentor, name:current} : mentor);
+
+    // setPerson((person) => ({...person, mentors : mentorsMap}));
+
+  }
 
   const addHandler = () => {
     const name = prompt(`새로운 멘토의 이름은 무엇인가요?`);
     const title = prompt(`새로운 멘토의 직함은 무엇인가요?`);
 
+    dispatch({type : 'added', name, title});
+
     const newMentor = [...person.mentors];
     newMentor.push({name, title});
 
-    setPerson((person) => ({...person, mentors: newMentor}));
+    // setPerson((person) => ({...person, mentors: newMentor}));
 
   };
 
@@ -18,30 +48,11 @@ export default function AppMentor() {
     const toDelete = prompt(`삭제 원하는 멘토의 이름은 무엇인가요?`);
 
     const mapMentors = person.mentors.filter((mentor) => mentor.name !== toDelete);
-    setPerson((person) => ({...person, mentors : mapMentors}) );
-
+    // setPerson((person) => ({...person, mentors : mapMentors}) );
+    dispatch({type : 'deleted', toDelete});
   };
 
-  const changeHandler = () => {
-    const prev = prompt(`누구의 이름을 바꾸고 싶은가요?`);
-    const current = prompt(`이름을 무엇으로 바꾸고 싶은가요?`);
-
-    //if문 이용
-    // setPerson((person) => ({...person, mentors : person.mentors.map((mentor) => {
-    //   if (mentor.name === prev) {
-    //     return {...mentor, name: current}
-    //   } return mentor
-      
-    // }) })
-    // );
-
-    //삼항 연산자 이용
-    const mentorsMap = person.mentors.map((mentor) =>
-      mentor.name === prev ? {...mentor, name:current} : mentor);
-
-    setPerson((person) => ({...person, mentors : mentorsMap}));
-
-  }
+ 
 
 
   return (
