@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import AppMentors from './AppMentors';
+import AppForm from './AppForm';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <AppMentors />
+    <AppForm />
 );
 
 // If you want to start measuring performance in your app, pass a function
