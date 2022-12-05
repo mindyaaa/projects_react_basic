@@ -5,10 +5,12 @@ import reportWebVitals from './reportWebVitals';
 import AppMentors from './AppMentors';
 import AppForm from './AppForm';
 import AppWrap from './AppWrap';
+import AppTheme from './AppTheme';
+import AppProducts from './basic/AppProducts';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <AppWrap />
+    <AppProducts />
 );
 
 // If you want to start measuring performance in your app, pass a function
